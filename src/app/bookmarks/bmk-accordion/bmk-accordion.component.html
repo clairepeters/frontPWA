@@ -1,0 +1,71 @@
+<!-- BOOOKMARKS PANEL -->
+<!-- (opened)="panelOpenState = true"
+(closed)="panelOpenState = true" -->
+<mat-expansion-panel class="no-spacing" [expanded]="true"  [hideToggle]="true" [disabled]="true" >
+<mat-expansion-panel-header style="color:black;">Bookmarks</mat-expansion-panel-header >
+
+<!-- =============================================================================================================================================================================================== -->
+<!-- ||||||||||||||||| Product Accordion (WITHIN FOLDER/BKMK ACCORDION) That Contains the Boookmarks |||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||-->
+<!-- =============================================================================================================================================================================================== -->
+<!-- Comments:  
+      1. Uses Dummy Data
+      2. fix spacing formatting for long titles
+      3. add title trimming fuction
+     -->
+
+<mat-accordion>
+  <!-- START PRODUCT PANEL -->
+  <mat-expansion-panel>
+    <mat-expansion-panel-header>
+      <mat-panel-title>
+        ProLiant DL380 Gen 10
+      </mat-panel-title>
+      <mat-panel-description>
+        <!-- description if wanted -->
+      </mat-panel-description>
+    </mat-expansion-panel-header>
+    <mat-divider></mat-divider>
+    <!-- this searches through the array created from the bookmarks service @src\app\bookmarks\bookmarks.service.ts and document information comes from the documents.ts file @ src\app\documents.ts -->
+    <div class="document-bookmark" *ngFor="let document of items">
+      <div class="other" *ngIf=" document.product == 'ProLiant DL380 Gen 10'">
+        <div class="bookmarks-card">
+          <div class="document-bookmark">
+            {{document.name}}
+            <p> </p>
+            <mat-divider></mat-divider>
+          </div>
+        </div>
+      </div>
+    </div>
+  </mat-expansion-panel>
+  <!-- END PRODUCT PANEL -->
+
+  <!-- START PRODUCT PANEL -->
+  <mat-expansion-panel>
+    <mat-expansion-panel-header>
+      <mat-panel-title>
+        ProLiant MicroServer Gen10 Models
+      </mat-panel-title>
+      <mat-panel-description>
+        <!-- description if wanted just extra info for user  -->
+      </mat-panel-description>
+    </mat-expansion-panel-header>
+    <mat-divider></mat-divider>
+    <div class="document-bookmark" *ngFor="let document of items">
+      <div class="other" *ngIf=" document.product == 'ProLiant MicroServer Gen10 Models'">
+        <div class="bookmarks-card">
+          <div class="document-bookmark">
+            {{document.name}}
+            <p> </p>
+            <mat-divider></mat-divider>
+          </div>
+        </div>
+      </div>
+    </div>
+  </mat-expansion-panel>
+  <!-- END PRODUCT PANEL -->
+</mat-accordion>
+<!-- END PRODUCT ACCORDION -->
+
+</mat-expansion-panel>
+<!-- END BOOKMARKS PANEL -->

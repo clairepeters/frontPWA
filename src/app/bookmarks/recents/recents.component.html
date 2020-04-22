@@ -1,0 +1,11 @@
+<div class="recents-title">
+    Recents
+  </div>
+  
+  <div class="recents-container">
+    <div class="recents-item" *ngFor="let document of items">
+      <!-- function for trimming the title -->
+      {{(document.name.length>40)? (document.name | slice:0:40)+'..':(document.name)}}
+    </div>
+  </div>
+  

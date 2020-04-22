@@ -1,0 +1,50 @@
+<!-- FOLDERS PANEL -->
+<mat-expansion-panel onload="dbOpen()" class="no-spacing" (opened)="panelOpenState = true"
+    (closed)="panelOpenState = false">
+    <script>
+        function dbOpen(){
+            this.folderDB.openDatabase(1, evt => {
+                let objectStore = evt.currentTarget.result.createObjectStore('folders');
+
+                objectStore.createIndex('name', 'ID', { unique: false });
+            });
+        };
+    </script>
+    <mat-expansion-panel-header>
+        <mat-panel-title>Folders</mat-panel-title>
+        <mat-panel-description>
+            <!-- can add text here -->
+        </mat-panel-description>
+    </mat-expansion-panel-header>
+    <!-- content of the panel -->
+    <!-- this opens up the dialog modal which utilizes the new-folder-modal component within the bookmarks folder -->
+    <button mat-icon-button id="btn" matTooltip="Add Folder" (click)="openDialog()">
+        <mat-icon>add</mat-icon>
+    </button>
+    <button mat-icon-button matTooltip="edit" (click)="edit()">
+        edit
+    </button>
+    <!-- [ng-attr-matBadge]="isEditing" matBadgePosition="before" matBadgeColor="accent" -->
+
+    <mat-divider></mat-divider>
+    <!-- folders populate here -->
+
+    <!-- "{{isEditing ? 'editing center folder mat-raised-button ng-star-inserted': 'notEditing center folder mat-raised-button ng-star-inserted'}}" -->
+    <div class="center folder-container">
+        <!-- this searches through the folder array created in the bookmarks.ts file using the functions in the new-folder-modal service -->
+
+        <div id="folder"
+            class="{{isEditing ? 'editing center mat-button ng-star-inserted': 'notEditing center mat-button ng-star-inserted'}}"
+            *ngFor="let folder of folders">
+            <div class="{{isEditing ? ' click badge ': ' click noBadge'}}" id="{{folder.ID}}"
+                (click)="delete(folder.ID)">
+                -</div>
+            <div class="folder" [routerLink]="['/folder',  folder.ID ]">{{folder["name"]}}</div>
+
+        </div>
+
+
+    </div>
+    <!-- content of the panel -->
+</mat-expansion-panel>
+<!-- END FOLDERS PANEL -->

@@ -1,0 +1,1078 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>pwa documentation</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
+	      <link rel="stylesheet" href="../styles/style.css">
+    </head>
+    <body>
+
+        <div class="navbar navbar-default navbar-fixed-top visible-xs">
+            <a href="../" class="navbar-brand">pwa documentation</a>
+            <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
+        </div>
+
+        <div class="xs-menu menu" id="mobile-menu">
+                <div id="book-search-input" role="search"><input type="text" placeholder="Type to search"></div>            <compodoc-menu></compodoc-menu>
+        </div>
+
+        <div class="container-fluid main">
+           <div class="row main">
+               <div class="hidden-xs menu">
+                   <compodoc-menu mode="normal"></compodoc-menu>
+               </div>
+               <!-- START CONTENT -->
+               <div class="content component">
+                   <div class="content-data">
+
+
+
+
+<ol class="breadcrumb">
+  <li>Components</li>
+  <li>FolderAccordionComponent</li>
+</ol>
+
+<ul class="nav nav-tabs" role="tablist">
+        <li class="active">
+            <a href="#info" role="tab" id="info-tab" data-toggle="tab" data-link="info">Info</a>
+        </li>
+        <li >
+            <a href="#source" role="tab" id="source-tab" data-toggle="tab" data-link="source">Source</a>
+        </li>
+        <li >
+            <a href="#templateData" role="tab" id="templateData-tab" data-toggle="tab" data-link="template">Template</a>
+        </li>
+        <li >
+            <a href="#styleData" role="tab" id="styleData-tab" data-toggle="tab" data-link="style">Styles</a>
+        </li>
+        <li >
+            <a href="#tree" role="tab" id="tree-tab" data-toggle="tab" data-link="dom-tree">DOM Tree</a>
+        </li>
+</ul>
+
+<div class="tab-content">
+    <div class="tab-pane fade active in" id="c-info"><p class="comment">
+    <h3>File</h3>
+</p>
+<p class="comment">
+    <code>src/app/bookmarks/folder-accordion/folder-accordion.component.ts</code>
+</p>
+
+
+
+    <p class="comment">
+        <h3>Implements</h3>
+    </p>
+    <p class="comment">
+                    <code><a href="https://angular.io/api/core/OnInit" target="_blank" >OnInit</a></code>
+    </p>
+
+
+<section>
+    <h3>Metadata</h3>
+    <table class="table table-sm table-hover">
+        <tbody>
+
+
+
+
+
+
+
+
+
+
+
+            <tr>
+                <td class="col-md-3">selector</td>
+                <td class="col-md-9"><code>app-folder-accordion</code></td>
+            </tr>
+
+            <tr>
+                <td class="col-md-3">styleUrls</td>
+                <td class="col-md-9"><code>./folder-accordion.component.scss</code></td>
+            </tr>
+
+
+
+            <tr>
+                <td class="col-md-3">templateUrl</td>
+                <td class="col-md-9"><code>./folder-accordion.component.html</code></td>
+            </tr>
+
+
+
+
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+    <section>
+    <h3 id="index">Index</h3>
+    <table class="table table-sm table-bordered index-table">
+        <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Properties</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#btnCounter">btnCounter</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#dialog">dialog</a>
+                            </li>
+                            <li>
+                                <a href="#folder">folder</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Private</span>
+                                <a href="#folderDB">folderDB</a>
+                            </li>
+                            <li>
+                                <a href="#folders">folders</a>
+                            </li>
+                            <li>
+                                <a href="#isEditing">isEditing</a>
+                            </li>
+                            <li>
+                                <a href="#items">items</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Methods</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#delete">delete</a>
+                            </li>
+                            <li>
+                                <a href="#edit">edit</a>
+                            </li>
+                            <li>
+                                <a href="#generateID">generateID</a>
+                            </li>
+                            <li>
+                                <a href="#ngOnInit">ngOnInit</a>
+                            </li>
+                            <li>
+                                <a href="#openDialog">openDialog</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+    <section>
+    <h3 id="constructor">Constructor</h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+<code>constructor(route: <a href="https://angular.io/api/router/ActivatedRoute" target="_blank">ActivatedRoute</a>, bookmarksService: <a href="../injectables/BookmarksService.html">BookmarksService</a>, foldersService: <a href="../injectables/FoldersService.html">FoldersService</a>, dialog: MatDialog)</code>
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="36" class="link-to-prism">src/app/bookmarks/folder-accordion/folder-accordion.component.ts:36</a></div>
+                            </td>
+                        </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                            <div>
+                                    <b>Parameters :</b>
+                                    <table class="params">
+                                        <thead>
+                                            <tr>
+                                                <td>Name</td>
+                                                    <td>Type</td>
+                                                <td>Optional</td>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                                <tr>
+                                                        <td>route</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="https://angular.io/api/router/ActivatedRoute" target="_blank" >ActivatedRoute</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>bookmarksService</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../injectables/BookmarksService.html" target="_self" >BookmarksService</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>foldersService</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../injectables/FoldersService.html" target="_self" >FoldersService</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>dialog</td>
+                                                  
+                                                        <td>
+                                                                    <code>MatDialog</code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                        </tbody>
+                                    </table>
+                            </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+</section>
+
+
+
+
+
+    <section>
+    
+    <h3 id="methods">
+        Methods
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="delete"></a>
+                    <span class="name">
+                        <b>
+                            delete
+                        </b>
+                        <a href="#delete"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>delete(clicked_id)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="59"
+                            class="link-to-prism">src/app/bookmarks/folder-accordion/folder-accordion.component.ts:59</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>clicked_id</td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="edit"></a>
+                    <span class="name">
+                        <b>
+                            edit
+                        </b>
+                        <a href="#edit"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>edit()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="50"
+                            class="link-to-prism">src/app/bookmarks/folder-accordion/folder-accordion.component.ts:50</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="generateID"></a>
+                    <span class="name">
+                        <b>
+                            generateID
+                        </b>
+                        <a href="#generateID"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>generateID()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="74"
+                            class="link-to-prism">src/app/bookmarks/folder-accordion/folder-accordion.component.ts:74</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="ngOnInit"></a>
+                    <span class="name">
+                        <b>
+                            ngOnInit
+                        </b>
+                        <a href="#ngOnInit"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>ngOnInit()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="122"
+                            class="link-to-prism">src/app/bookmarks/folder-accordion/folder-accordion.component.ts:122</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="openDialog"></a>
+                    <span class="name">
+                        <b>
+                            openDialog
+                        </b>
+                        <a href="#openDialog"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>openDialog()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="80"
+                            class="link-to-prism">src/app/bookmarks/folder-accordion/folder-accordion.component.ts:80</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</section>
+    <section>
+    
+        <h3 id="inputs">
+            Properties
+        </h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="btnCounter"></a>
+                        <span class="name">
+                            <b>
+                            btnCounter</b>
+                            <a href="#btnCounter"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Default value : </i><code>1</code>
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="35" class="link-to-prism">src/app/bookmarks/folder-accordion/folder-accordion.component.ts:35</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="dialog"></a>
+                        <span class="name">
+                            <b>
+                                <span class="modifier">Public</span>
+                            dialog</b>
+                            <a href="#dialog"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>    <code>MatDialog</code>
+
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="42" class="link-to-prism">src/app/bookmarks/folder-accordion/folder-accordion.component.ts:42</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="folder"></a>
+                        <span class="name">
+                            <b>
+                            folder</b>
+                            <a href="#folder"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>    <code>literal type</code>
+
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="26" class="link-to-prism">src/app/bookmarks/folder-accordion/folder-accordion.component.ts:26</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="folderDB"></a>
+                        <span class="name">
+                            <b>
+                                <span class="modifier">Private</span>
+                            folderDB</b>
+                            <a href="#folderDB"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Default value : </i><code>new NgxIndexedDB(&#x27;folders&#x27;, 1)</code>
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="36" class="link-to-prism">src/app/bookmarks/folder-accordion/folder-accordion.component.ts:36</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="folders"></a>
+                        <span class="name">
+                            <b>
+                            folders</b>
+                            <a href="#folders"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="31" class="link-to-prism">src/app/bookmarks/folder-accordion/folder-accordion.component.ts:31</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="isEditing"></a>
+                        <span class="name">
+                            <b>
+                            isEditing</b>
+                            <a href="#isEditing"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Default value : </i><code>false</code>
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="34" class="link-to-prism">src/app/bookmarks/folder-accordion/folder-accordion.component.ts:34</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="items"></a>
+                        <span class="name">
+                            <b>
+                            items</b>
+                            <a href="#items"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="33" class="link-to-prism">src/app/bookmarks/folder-accordion/folder-accordion.component.ts:33</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+</section>
+
+</div>
+
+
+    <div class="tab-pane fade  tab-source-code" id="c-source">
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Component, OnInit } from &#x27;@angular/core&#x27;;
+import { BookmarksService } from &#x27;../bmk-accordion/bmk-service/bookmarks.service&#x27;
+import { FoldersService } from &#x27;./folders/folders.service&#x27;
+import { MatDialog, MatDialogRef, MAT_DIALOG_DATA, fadeInItems } from &#x27;@angular/material&#x27;;
+import { DialogData } from &quot;./folders/new-folder-modal/DialogData&quot;;
+import { ModalComponent } from &#x27;./folders/new-folder-modal/modal.component&#x27;;
+import { generate } from &#x27;rxjs&#x27;;
+import { SearchComponent } from &#x27;../search/search.component&#x27;
+import { ActivatedRoute } from &#x27;@angular/router&#x27;;
+import { RecentsComponent } from &#x27;../recents/recents.component&#x27;
+import { v4 as uuid } from &#x27;uuid&#x27;;
+import { NgxIndexedDB } from &#x27;ngx-indexed-db&#x27;;
+import { error } from &#x27;util&#x27;;
+@Component({
+  selector: &#x27;app-folder-accordion&#x27;,
+  templateUrl: &#x27;./folder-accordion.component.html&#x27;,
+  styleUrls: [&#x27;./folder-accordion.component.scss&#x27;]
+})
+
+export class FolderAccordionComponent implements OnInit {
+
+  //Data for folder modal
+
+
+
+  &quot;folder&quot;: {
+    &quot;name&quot;: string,
+    &quot;ID&quot;: string,
+    &quot;products&quot;: [],
+  }
+  folders;
+  //Array of bookmarked items from bookmarks service
+  items;
+  isEditing &#x3D; false;
+  btnCounter &#x3D; 1;
+  private folderDB &#x3D; new NgxIndexedDB(&#x27;folders&#x27;, 1);
+
+  constructor(
+    private route: ActivatedRoute,
+    private bookmarksService: BookmarksService,
+    private foldersService: FoldersService,
+    public dialog: MatDialog, //this is used for the &quot;new folder pop-up&quot;
+  ) {
+    //set items to the array that the service allows us to grab
+    this.items &#x3D; this.bookmarksService.getBookmarks();
+    //set folders to the array that the service allows us to grab
+    this.folders &#x3D; this.foldersService.getFolders();
+  } //end constructor
+
+  edit() {
+    this.btnCounter++;
+    if (this.btnCounter % 2 &#x3D;&#x3D; 0) {
+      this.isEditing &#x3D; true;
+    } else {
+      this.isEditing &#x3D; false;
+    }
+  }
+
+  delete(clicked_id) {
+    var numFolders &#x3D; this.folders.length;
+    var folders &#x3D; this.folders;
+    var theFolder;
+    for (var i &#x3D; 0; i &lt; numFolders; i++) {
+      if (folders[i].ID &#x3D;&#x3D;&#x3D; clicked_id) {
+        theFolder &#x3D; i;
+        i++;
+      }
+    }
+    folders.splice(theFolder, 1);
+    this.foldersService.setFolders(folders);
+    this.folders &#x3D; this.foldersService.getFolders();
+
+  }
+  generateID() {
+    var id &#x3D; uuid()
+    return id
+  }
+
+
+  openDialog(): void {
+    //gets rid of the focus on add folder button
+    document.getElementById(&quot;btn&quot;).blur();
+    //specs for dialog
+    const dialogRef &#x3D; this.dialog.open(ModalComponent, {
+      width: &#x27;250px&#x27;,
+      data: { folder: this.folder }
+    });
+    // this is what happens when closing the dialog box
+    dialogRef.afterClosed().subscribe(result &#x3D;&gt; {
+      if (result &#x3D;&#x3D; null) {
+        return;
+      }
+      console.log(this.folders);
+      this.folder &#x3D; { name: result, ID: this.generateID(), products: [] }
+
+
+      //requirements for folder 
+      this.foldersService.addFolder(this.folder)
+      var folder &#x3D; this.folder
+      let fdb &#x3D; new NgxIndexedDB(&#x27;idxDB&#x27;, 1);
+      fdb.openDatabase(1, evt &#x3D;&gt; {
+        let objectStore &#x3D; evt.currentTarget.result.createObjectStore(&#x27;folders&#x27;, { keyPath: &#x27;id&#x27;, autoIncrement: true });
+
+        objectStore.createIndex(&#x27;name&#x27;, &#x27;name&#x27;, { unique: false });
+        objectStore.createIndex(&#x27;UUID&#x27;, &#x27;UUID&#x27;, { unique: true });
+        objectStore.createIndex(&#x27;products&#x27;, &#x27;products&#x27;, { unique: false });
+
+      }).then(function () {
+        fdb.add(&#x27;folders&#x27;, { name: folder.name, UUID: folder.ID, products: folder.products }).then(
+          () &#x3D;&gt; {
+            // Do something after the value was added
+            
+          },
+          error &#x3D;&gt; {
+            console.log(error);
+          }
+        );
+      });
+    });
+  } //end export class
+
+  ngOnInit() {
+
+    let fdb &#x3D; new NgxIndexedDB(&#x27;idxDB&#x27;, 1);
+    fdb.openDatabase(1, evt &#x3D;&gt; {
+        let objectStore &#x3D; evt.currentTarget.result.createObjectStore(&#x27;folders&#x27;, { keyPath: &#x27;id&#x27;, autoIncrement: true });
+
+        objectStore.createIndex(&#x27;name&#x27;, &#x27;name&#x27;, { unique: false });
+        objectStore.createIndex(&#x27;UUID&#x27;, &#x27;UUID&#x27;, { unique: true });
+        objectStore.createIndex(&#x27;products&#x27;, &#x27;products&#x27;, { unique: false });
+
+      }).then(function () {
+        fdb.getByKey(&#x27;folders&#x27;, 1).then(
+          folder &#x3D;&gt; {
+            console.log(folder)
+          },
+          error &#x3D;&gt; {
+            console.log(error)
+          }
+        );
+      });
+   
+
+  }
+
+
+
+
+
+
+
+
+
+
+
+}
+</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="c-templateData">
+        <pre class="line-numbers"><code class="language-html">&lt;!-- FOLDERS PANEL --&gt;
+&lt;mat-expansion-panel onload&#x3D;&quot;dbOpen()&quot; class&#x3D;&quot;no-spacing&quot; (opened)&#x3D;&quot;panelOpenState &#x3D; true&quot;
+    (closed)&#x3D;&quot;panelOpenState &#x3D; false&quot;&gt;
+    &lt;script&gt;
+        function dbOpen(){
+            this.folderDB.openDatabase(1, evt &#x3D;&gt; {
+                let objectStore &#x3D; evt.currentTarget.result.createObjectStore(&#x27;folders&#x27;);
+
+                objectStore.createIndex(&#x27;name&#x27;, &#x27;ID&#x27;, { unique: false });
+            });
+        };
+    &lt;/script&gt;
+    &lt;mat-expansion-panel-header&gt;
+        &lt;mat-panel-title&gt;Folders&lt;/mat-panel-title&gt;
+        &lt;mat-panel-description&gt;
+            &lt;!-- can add text here --&gt;
+        &lt;/mat-panel-description&gt;
+    &lt;/mat-expansion-panel-header&gt;
+    &lt;!-- content of the panel --&gt;
+    &lt;!-- this opens up the dialog modal which utilizes the new-folder-modal component within the bookmarks folder --&gt;
+    &lt;button mat-icon-button id&#x3D;&quot;btn&quot; matTooltip&#x3D;&quot;Add Folder&quot; (click)&#x3D;&quot;openDialog()&quot;&gt;
+        &lt;mat-icon&gt;add&lt;/mat-icon&gt;
+    &lt;/button&gt;
+    &lt;button mat-icon-button matTooltip&#x3D;&quot;edit&quot; (click)&#x3D;&quot;edit()&quot;&gt;
+        edit
+    &lt;/button&gt;
+    &lt;!-- [ng-attr-matBadge]&#x3D;&quot;isEditing&quot; matBadgePosition&#x3D;&quot;before&quot; matBadgeColor&#x3D;&quot;accent&quot; --&gt;
+
+    &lt;mat-divider&gt;&lt;/mat-divider&gt;
+    &lt;!-- folders populate here --&gt;
+
+    &lt;!-- &quot;{{isEditing ? &#x27;editing center folder mat-raised-button ng-star-inserted&#x27;: &#x27;notEditing center folder mat-raised-button ng-star-inserted&#x27;}}&quot; --&gt;
+    &lt;div class&#x3D;&quot;center folder-container&quot;&gt;
+        &lt;!-- this searches through the folder array created in the bookmarks.ts file using the functions in the new-folder-modal service --&gt;
+
+        &lt;div id&#x3D;&quot;folder&quot;
+            class&#x3D;&quot;{{isEditing ? &#x27;editing center mat-button ng-star-inserted&#x27;: &#x27;notEditing center mat-button ng-star-inserted&#x27;}}&quot;
+            *ngFor&#x3D;&quot;let folder of folders&quot;&gt;
+            &lt;div class&#x3D;&quot;{{isEditing ? &#x27; click badge &#x27;: &#x27; click noBadge&#x27;}}&quot; id&#x3D;&quot;{{folder.ID}}&quot;
+                (click)&#x3D;&quot;delete(folder.ID)&quot;&gt;
+                -&lt;/div&gt;
+            &lt;div class&#x3D;&quot;folder&quot; [routerLink]&#x3D;&quot;[&#x27;/folder&#x27;,  folder.ID ]&quot;&gt;{{folder[&quot;name&quot;]}}&lt;/div&gt;
+
+        &lt;/div&gt;
+
+
+    &lt;/div&gt;
+    &lt;!-- content of the panel --&gt;
+&lt;/mat-expansion-panel&gt;
+&lt;!-- END FOLDERS PANEL --&gt;</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="c-styleData">
+                <p class="comment">
+                    <code>./folder-accordion.component.scss</code>
+                </p>
+                <pre class="line-numbers"><code class="language-scss">.folders{
+    // display: block;
+    width: 95%;
+    height: 50px;
+    background-color: rgba(255, 255, 255, 0.66);
+    color: #01A982;
+    font-family: &#x27;HPE-Light&#x27;;
+    font-size: 28px;
+    padding: 10px;
+    border-radius: 20px 20px 0px 0px;
+  }
+  .folder{
+    white-space: normal;
+    display: inline-block;
+    height: 80px;
+    width: 100px;
+    background-color: #425563;
+    border-radius: 5px;
+    color: white;
+    padding: 5px;
+    font-family: &quot;HPE-Light&quot;;
+    overflow-y: hidden;
+  }
+  .center{
+    text-align: center !important;
+  }
+  .editing{
+    background-color: transparent;
+    margin: 15px 0px;
+  }
+  .notEditing{
+    background-color: transparent;
+    margin: 10px 0px;
+  }
+  
+ .noBadge{
+   display: none;
+ }
+ .badge{
+  position:absolute;
+  top: -6px;
+  left: 6px;
+  font-size:.7em;
+  background:red;
+  color:white;
+  width:18px;height:18px;
+  text-align:center;
+  line-height:18px;
+  border-radius:50%;
+  box-shadow:0 0 1px #333;
+ }
+  
+  .no-spacing  {
+    margin: 0px !important;
+    border-radius: 0 !important;
+    border-top-left-radius: 10px !important;
+    border-top-right-radius: 10px !important;
+  }
+  
+
+ </code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="c-tree">
+        <div id="tree-container"></div>
+        <div class="tree-legend">
+            <div class="title">
+                <b>Legend</b>
+            </div>
+            <div>
+                <div class="color htmlelement"></div><span>Html element</span>
+            </div>
+            <div>
+                <div class="color component"></div><span>Component</span>
+            </div>
+            <div>
+                <div class="color directive"></div><span>Html element with directive</span>
+            </div>
+        </div>
+    </div>
+
+    
+</div>
+
+<script src="../js/libs/vis.min.js"></script>
+<script src="../js/libs/htmlparser.js"></script>
+<script src="../js/libs/deep-iterator.js"></script>
+<script>
+        var COMPONENT_TEMPLATE = '<div><!-- FOLDERS PANEL --><mat-expansion-panel onload="dbOpen()" class="no-spacing" (opened)="panelOpenState = true"    (closed)="panelOpenState = false">    <script>        function dbOpen(){            this.folderDB.openDatabase(1, evt => {                let objectStore = evt.currentTarget.result.createObjectStore(\'folders\');                objectStore.createIndex(\'name\', \'ID\', { unique: false });            });        };    </script>    <mat-expansion-panel-header>        <mat-panel-title>Folders</mat-panel-title>        <mat-panel-description>            <!-- can add text here -->        </mat-panel-description>    </mat-expansion-panel-header>    <!-- content of the panel -->    <!-- this opens up the dialog modal which utilizes the new-folder-modal component within the bookmarks folder -->    <button mat-icon-button id="btn" matTooltip="Add Folder" (click)="openDialog()">        <mat-icon>add</mat-icon>    </button>    <button mat-icon-button matTooltip="edit" (click)="edit()">        edit    </button>    <!-- [ng-attr-matBadge]="isEditing" matBadgePosition="before" matBadgeColor="accent" -->    <mat-divider></mat-divider>    <!-- folders populate here -->    <!-- "{{isEditing ? \'editing center folder mat-raised-button ng-star-inserted\': \'notEditing center folder mat-raised-button ng-star-inserted\'}}" -->    <div class="center folder-container">        <!-- this searches through the folder array created in the bookmarks.ts file using the functions in the new-folder-modal service -->        <div id="folder"            class="{{isEditing ? \'editing center mat-button ng-star-inserted\': \'notEditing center mat-button ng-star-inserted\'}}"            *ngFor="let folder of folders">            <div class="{{isEditing ? \' click badge \': \' click noBadge\'}}" id="{{folder.ID}}"                (click)="delete(folder.ID)">                -</div>            <div class="folder" [routerLink]="[\'/folder\',  folder.ID ]">{{folder["name"]}}</div>        </div>    </div>    <!-- content of the panel --></mat-expansion-panel><!-- END FOLDERS PANEL --></div>'
+    var COMPONENTS = [{'name': 'AFolderComponent', 'selector': 'app-a-folder'},{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'BmkAccordionComponent', 'selector': 'app-bmk-accordion'},{'name': 'BookmarksComponent', 'selector': 'app-bookmarks'},{'name': 'DocumentDetailsComponent', 'selector': 'app-document-details'},{'name': 'DocumentsListComponent', 'selector': 'app-documents-list'},{'name': 'FolderAccordionComponent', 'selector': 'app-folder-accordion'},{'name': 'ModalComponent', 'selector': 'app-modal'},{'name': 'MoreDataComponent', 'selector': 'app-more-data'},{'name': 'RecentsComponent', 'selector': 'app-recents'},{'name': 'SearchComponent', 'selector': 'app-search'},{'name': 'TopbarComponent', 'selector': 'app-topbar'}];
+    var DIRECTIVES = [];
+    var ACTUAL_COMPONENT = {'name': 'FolderAccordionComponent'};
+</script>
+<script src="../js/tree.js"></script>
+
+
+
+
+
+
+
+
+
+
+                   
+
+
+
+
+                   </div><div class="search-results">
+    <div class="has-results">
+        <h1 class="search-results-title"><span class='search-results-count'></span> result-matching "<span class='search-query'></span>"</h1>
+        <ul class="search-results-list"></ul>
+    </div>
+    <div class="no-results">
+        <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+    </div>
+</div>
+</div>
+               <!-- END CONTENT -->
+           </div>
+       </div>
+
+       <script>
+            var COMPODOC_CURRENT_PAGE_DEPTH = 1;
+            var COMPODOC_CURRENT_PAGE_CONTEXT = 'component';
+            var COMPODOC_CURRENT_PAGE_URL = 'FolderAccordionComponent.html';
+            var MAX_SEARCH_RESULTS = 15;
+       </script>
+
+       <script src="../js/libs/custom-elements.min.js"></script>
+       <script src="../js/libs/lit-html.js"></script>
+       <!-- Required to polyfill modern browsers as code is ES5 for IE... -->
+       <script src="../js/libs/custom-elements-es5-adapter.js" charset="utf-8" defer></script>
+       <script src="../js/menu-wc.js" defer></script>
+
+       <script src="../js/libs/bootstrap-native.js"></script>
+
+       <script src="../js/libs/es6-shim.min.js"></script>
+       <script src="../js/libs/EventDispatcher.js"></script>
+       <script src="../js/libs/promise.min.js"></script>
+       <script src="../js/libs/zepto.min.js"></script>
+
+       <script src="../js/compodoc.js"></script>
+
+       <script src="../js/tabs.js"></script>
+       <script src="../js/menu.js"></script>
+       <script src="../js/libs/clipboard.min.js"></script>
+       <script src="../js/libs/prism.js"></script>
+       <script src="../js/sourceCode.js"></script>
+          <script src="../js/search/search.js"></script>
+          <script src="../js/search/lunr.min.js"></script>
+          <script src="../js/search/search-lunr.js"></script>
+          <script src="../js/search/search_index.js"></script>
+       <script src="../js/lazy-load-graphs.js"></script>
+
+
+    </body>
+</html>

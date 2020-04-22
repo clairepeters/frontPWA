@@ -1,0 +1,20 @@
+//scss for app component
+@font-face {
+    font-family: HPE-Light;
+    src: url(../assets/fonts/MetricHPE-Web-Light.woff) format("woff"),
+    url(../assets/fonts/MetricHPE-Web-Light.eot) format("eot"),
+  }
+  @font-face {
+    font-family: HPE-Semibold;
+    src: url(../assets/fonts/MetricHPE-Web-Medium.woff) format("woff"),
+    url(../assets/fonts/MetricHPE-Web-Medium.eot) format("eot"),
+  }
+  
+.mat-tab-link{
+    font-family: 'HPE-Light' !important;
+}
+.content{
+  height: 100%;
+}
+
+

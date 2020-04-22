@@ -1,0 +1,29 @@
+.center{
+    text-align: center !important;
+  }
+  .bookmarks{
+    // display: block;
+    width: 95%;
+    height: 100%;
+    background-color: white;
+    color: #01A982;
+    font-family: 'HPE-Light';
+    font-size: 28px;
+    padding: 10px;
+    border-radius: 20px 20px 0px 0px;
+  }
+  
+  .document-bookmark{
+    
+    margin: 10px 6px 10px 6px;
+    padding: 0px 3px
+  }
+  
+  .no-spacing  {
+    margin: 0px !important;
+    border-radius: 0 !important;
+  }
+  
+  .divider{
+    display: inline-block;
+  }

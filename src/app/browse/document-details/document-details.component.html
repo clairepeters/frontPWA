@@ -1,0 +1,28 @@
+<mat-card>
+  <mat-card-content>
+    <h2 class="page-title">Document Details</h2>
+    <hr class="doc-divider" >
+  </mat-card-content>
+
+  <mat-card>
+
+    <mat-card-content>
+        <div *ngIf="document">
+            <h3 >{{ document.name }}</h3>
+            <h4>{{ document.price | currency }}</h4>
+            <p>{{ document.description }}</p>
+          
+            <div (click)="addToBookmarks(document)">bookmark</div>
+            <!-- <nb-icon  icon="download-outline" class="icon-size"> </nb-icon>
+            <nb-icon  icon="expand-outline" class="icon-size"> </nb-icon> -->
+          </div>
+    </mat-card-content>
+  </mat-card>
+
+</mat-card>
+
+
+
+
+
+
