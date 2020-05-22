@@ -12,7 +12,7 @@ import { environment } from '../environments/environment';
 import { BookmarksComponent } from './bookmarks/bookmarks.component';
 import { TopbarComponent } from './topbar/topbar.component';
 import { DocumentsListComponent } from './browse/documents-list/documents-list.component';
-import { DocumentDetailsComponent } from './browse/document-details/document-details.component';
+import { DocumentDetailsComponent } from './browse/documents-list/document-details/document-details.component';
 import { MoreDataComponent } from './more-data/more-data.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FlexLayoutModule } from '@angular/flex-layout';
@@ -29,11 +29,13 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
     BrowserModule,
     ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production }),
     RouterModule.forRoot([
-      { path: 'bookmarks', component: BookmarksComponent },
+      { path: 'Bookmark', component: BookmarksComponent },
       { path: 'DOC_DATA/:id', component: DocumentDetailsComponent },
       { path: 'folder/:ID', component: AFolderComponent },
-      { path: 'documents-list', component: DocumentsListComponent },
+      { path: 'Documents', component: DocumentsListComponent },
       { path: 'more-data', component: MoreDataComponent },
+      { path: '', redirectTo: '/Bookmark', pathMatch: 'full'
+  }
 
     ]),
     HttpClientModule,

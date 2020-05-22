@@ -1,6 +1,7 @@
 
 
 <mat-card>
+	
 	<mat-card-content>
 		<mat-form-field>
 			<input matInput (keyup)="applyFilter($event.target.value)" placeholder="    Filter">
@@ -13,16 +14,18 @@
 			<!-- Name Column -->
 			<ng-container matColumnDef="name">
 				<th mat-header-cell *matHeaderCellDef> Name </th>
-				<td mat-cell *matCellDef="let document"> {{document.name}} </td>
-				
+				<td mat-cell *matCellDef="let document"> {{document.TITLE}} </td>
+
 			</ng-container>
 
 
-			<ng-container style="text-align:right !important" matColumnDef='customColumn1'>
+			<ng-container style="text-align:right !important" matColumnDef='customColumn1' >
 				<th mat-header-cell *matHeaderCellDef class="icon_cell"> more</th>
 				<td mat-cell *matCellDef="let document" class="icon_cell " > 
-				<div >
-					<fa-icon [icon]="faChevronRight" [routerLink]="['/DOC_DATA', document.id]"></fa-icon>
+				<div>
+					
+					<!-- <i class="fa faChevronRight" onclick="navigateToOtherComponent(document)"></i> -->
+					<fa-icon [icon]="faChevronRight" [routerLink]="['/DOC_DATA', document.DOCUMENTID]"></fa-icon>
 				  </div>
 				</td>
 					

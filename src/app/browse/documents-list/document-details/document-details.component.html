@@ -7,12 +7,11 @@
   <mat-card>
 
     <mat-card-content>
-        <div *ngIf="document">
-            <h3 >{{ document.name }}</h3>
-            <h4>{{ document.price | currency }}</h4>
-            <p>{{ document.description }}</p>
-          
-            <div (click)="addToBookmarks(document)">bookmark</div>
+        <div  *ngFor="let d of document; let i=index;">
+            <h3 >{{ d.TITLE }}</h3>
+            <!-- <h4>{{ document.price | currency }}</h4> -->
+            <p>{{ d.SUMMARY }}</p>
+            <div (click)="addBookmark(d.DOCUMENTID, '12345678', 'NULL')" >bookmark</div>
             <!-- <nb-icon  icon="download-outline" class="icon-size"> </nb-icon>
             <nb-icon  icon="expand-outline" class="icon-size"> </nb-icon> -->
           </div>
@@ -20,6 +19,7 @@
   </mat-card>
 
 </mat-card>
+
 
 
 

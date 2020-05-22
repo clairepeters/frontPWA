@@ -10,11 +10,11 @@ export class AppComponent {
 
   links: any[] =[
     {
-      "path": "bookmarks",
+      "path": "Bookmark",
       "label": "Bookmarks"
     },
     {
-      "path": "documents-list",
+      "path": "Documents",
       "label": "Browse"
     }
   ]

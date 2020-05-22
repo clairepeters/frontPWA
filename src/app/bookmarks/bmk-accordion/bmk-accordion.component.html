@@ -14,19 +14,37 @@
      -->
 
 <mat-accordion>
+  <div class="document-bookmark" *ngFor="let b of bookmarks; let i=index;" id={{b.TITLE}}>
+    
+      <div class="bookmarks-card">
+        <div class="document-bookmark">
+          {{b.TITLE}}
+          <!-- <p> </p> -->
+          <button (click)=deleteBookmark(b.DOCUMENTID)>Remove</button>
+          <mat-divider></mat-divider>
+        </div>
+      </div>
+    
+  </div>
+  <!-- <ul class="bookmarks">
+    <li *ngFor="let b of bookmarks; let i=index;" id={{b.TITLE}}>
+     <h2>{{b.TITLE}}</h2>
+     <button (click)=deleteBookmark(b.DOCUMENTID)>Remove</button>
+    </li>
+  </ul> -->
   <!-- START PRODUCT PANEL -->
-  <mat-expansion-panel>
+  <!-- <mat-expansion-panel>
     <mat-expansion-panel-header>
       <mat-panel-title>
         ProLiant DL380 Gen 10
       </mat-panel-title>
-      <mat-panel-description>
+      <mat-panel-description> -->
         <!-- description if wanted -->
-      </mat-panel-description>
+      <!-- </mat-panel-description>
     </mat-expansion-panel-header>
-    <mat-divider></mat-divider>
+    <mat-divider></mat-divider> -->
     <!-- this searches through the array created from the bookmarks service @src\app\bookmarks\bookmarks.service.ts and document information comes from the documents.ts file @ src\app\documents.ts -->
-    <div class="document-bookmark" *ngFor="let document of items">
+    <!-- <div class="document-bookmark" *ngFor="let document of items">
       <div class="other" *ngIf=" document.product == 'ProLiant DL380 Gen 10'">
         <div class="bookmarks-card">
           <div class="document-bookmark">
@@ -36,19 +54,19 @@
           </div>
         </div>
       </div>
-    </div>
-  </mat-expansion-panel>
+    </div> -->
+  <!-- </mat-expansion-panel> -->
   <!-- END PRODUCT PANEL -->
 
   <!-- START PRODUCT PANEL -->
-  <mat-expansion-panel>
+  <!-- <mat-expansion-panel>
     <mat-expansion-panel-header>
       <mat-panel-title>
         ProLiant MicroServer Gen10 Models
       </mat-panel-title>
-      <mat-panel-description>
+      <mat-panel-description> -->
         <!-- description if wanted just extra info for user  -->
-      </mat-panel-description>
+      <!-- </mat-panel-description>
     </mat-expansion-panel-header>
     <mat-divider></mat-divider>
     <div class="document-bookmark" *ngFor="let document of items">
@@ -62,7 +80,7 @@
         </div>
       </div>
     </div>
-  </mat-expansion-panel>
+  </mat-expansion-panel> -->
   <!-- END PRODUCT PANEL -->
 </mat-accordion>
 <!-- END PRODUCT ACCORDION -->
