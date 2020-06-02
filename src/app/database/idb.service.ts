@@ -6,6 +6,7 @@ import { NgxIndexedDB } from 'ngx-indexed-db';
 export class IdbService {
 
 
+// this is code to create a local database, but it is not currently being used 
 
   constructor() { }
 

@@ -1,7 +1,9 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { BookmarksService } from './bmk-service/bookmarks.service'
+import { BookmarksService } from './recent-service/recent.service'
 import { ActivatedRoute, Router } from '@angular/router';
 import {ApiService} from '../../api-service.service';
+import { MatTableDataSource } from '@angular/material/table';
+import { faChevronRight } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   selector: 'app-bmk-accordion',
@@ -10,8 +12,11 @@ import {ApiService} from '../../api-service.service';
 })
 export class BmkAccordionComponent implements OnInit {
 
-  items;
+  recents;
   bookmarks: any = [];
+  dataSource: MatTableDataSource<Document>;
+  displayedColumns: string[] = ['name', 'customColumn1'];
+  documents: any = [];
 
   constructor(
     private route: ActivatedRoute,
@@ -21,7 +26,7 @@ export class BmkAccordionComponent implements OnInit {
 
   ) {
     //set items to the array that the service allows us to grab
-    this.items = this.bookmarksService.getBookmarks();
+    this.recents = this.bookmarksService.getRecents();
   } //end constructor
 
 
@@ -29,17 +34,18 @@ export class BmkAccordionComponent implements OnInit {
     
   ngOnInit() {
     this.getBookmarks();
+    this.dataSource = new MatTableDataSource(); // create new object
   }
-  
+ 
   getBookmarks() {
     this.bookmarks = [];
     this.api.getBookmarks().subscribe((data: {}) => {
       console.log(data);
-      this.bookmarks = data["recordsets"][0];
-      console.log(this.bookmarks)
+      this.dataSource.data = data["recordsets"][0];
+      return data;
     });
   }
-
+  faChevronRight = faChevronRight;
   deleteBookmark(DOCUMENTID) {
     this.api.deleteBookmark(DOCUMENTID)
       .subscribe(res => {

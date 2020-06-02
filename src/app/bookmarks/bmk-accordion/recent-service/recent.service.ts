@@ -14,20 +14,16 @@ export class BookmarksService {
    }
   items = [];
 
-  addToBookmarks(document) {
+  addToRecents(document) {
     this.items.push(document);
   }
 
-  getBookmarks() {
+  getRecents() {
     return this.items;
   }
 
-  clearBookmarks() {
+  clearRecents() {
     this.items = [];
     return this.items;
-  }
-
-  getMoreData() {
-    return this.http.get('/assets/moreData.json');
   }
 }

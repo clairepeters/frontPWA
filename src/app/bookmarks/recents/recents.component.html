@@ -1,11 +1,12 @@
 <div class="recents-title">
     Recents
+    <div class="clear" (click)='clear()'>clear</div>
   </div>
   
   <div class="recents-container">
-    <div class="recents-item" *ngFor="let document of items">
+    <div class="recents-item" *ngFor="let document of items" [routerLink]="['/DOC_DATA', document.DOCUMENTID]">
       <!-- function for trimming the title -->
-      {{(document.name.length>40)? (document.name | slice:0:40)+'..':(document.name)}}
+      {{(document.TITLE.length>40)? (document.TITLE | slice:0:40)+'..':(document.TITLE)}}
     </div>
   </div>
   

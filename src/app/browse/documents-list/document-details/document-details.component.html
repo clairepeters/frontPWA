@@ -1,17 +1,27 @@
 <mat-card>
   <mat-card-content>
-    <h2 class="page-title">Document Details</h2>
-    <hr class="doc-divider" >
+    <div class="backicon">
+      <fa-icon [icon]="faChevronLeft" (click)='goBack();'></fa-icon>
+    </div>
+    <div class="pagetitle" *ngFor="let d of document; let i=index;">
+      <h2 class="page-title" >{{d.TITLE}}</h2>
+    </div>
+    <div class="bookmark" (click)="flag=!flag"><i class="material-icons markicon" *ngIf="flag" (click)=deleteBookmark()>bookmark</i>
+      <i class="material-icons markicon" *ngIf="!flag" (click)="addBookmark( '12345678', 'NULL')">bookmark_border</i>
+    </div>
+    
   </mat-card-content>
 
   <mat-card>
 
     <mat-card-content>
         <div  *ngFor="let d of document; let i=index;">
-            <h3 >{{ d.TITLE }}</h3>
-            <!-- <h4>{{ document.price | currency }}</h4> -->
-            <p>{{ d.SUMMARY }}</p>
-            <div (click)="addBookmark(d.DOCUMENTID, '12345678', 'NULL')" >bookmark</div>
+            <p class="pagetext">{{ d.SUMMARY }}</p>
+            <hr class="doc-divider" >
+            <p class="pagetext">{{d.FULLDOC}}</p>
+            
+
+            <!-- <div (click)="addBookmark(d.DOCUMENTID, '12345678', 'NULL')" >bookmark</div> -->
             <!-- <nb-icon  icon="download-outline" class="icon-size"> </nb-icon>
             <nb-icon  icon="expand-outline" class="icon-size"> </nb-icon> -->
           </div>

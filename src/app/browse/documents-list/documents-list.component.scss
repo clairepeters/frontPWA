@@ -20,4 +20,16 @@ table.mat-table {
   .icon_cell{
     text-align: right;
   }
+  mat-card{
+    padding: 0px;
+    height: 100%;
+    background-color: #ffffffe6;
+  }
+  tbody{
+    background-color: rgba(241, 241, 241, 0.2);
+  }
+  .mat-elevation-z8 {
+    box-shadow: 0 5px 5px -3px rgba(0, 0, 0, 0.11), 0 8px 10px 1px rgba(0, 0, 0, 0), 0 3px 14px 2px rgba(0, 0, 0, 0);
+}
+  
   

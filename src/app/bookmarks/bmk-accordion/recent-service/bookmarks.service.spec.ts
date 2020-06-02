@@ -1,6 +1,6 @@
 import { TestBed } from '@angular/core/testing';
 
-import { BookmarksService } from './bookmarks.service';
+import { BookmarksService } from './recent.service';
 
 describe('BookmarksService', () => {
   beforeEach(() => TestBed.configureTestingModule({}));

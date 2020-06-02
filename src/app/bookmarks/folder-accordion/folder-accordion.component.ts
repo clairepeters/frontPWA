@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { BookmarksService } from '../bmk-accordion/bmk-service/bookmarks.service'
+import { BookmarksService } from '../bmk-accordion/recent-service/recent.service'
 import { FoldersService } from './folders/folders.service'
 import { MatDialog, MatDialogRef, MAT_DIALOG_DATA, fadeInItems } from '@angular/material';
 import { DialogData } from "./folders/new-folder-modal/DialogData";
@@ -11,6 +11,8 @@ import { RecentsComponent } from '../recents/recents.component'
 import { v4 as uuid } from 'uuid';
 import { NgxIndexedDB } from 'ngx-indexed-db';
 import { error } from 'util';
+import {ApiService} from '../../api-service.service';
+
 @Component({
   selector: 'app-folder-accordion',
   templateUrl: './folder-accordion.component.html',
@@ -19,18 +21,13 @@ import { error } from 'util';
 
 export class FolderAccordionComponent implements OnInit {
 
-  //Data for folder modal
-
-
-
+  public flag: boolean = true; //this is for the remove folder edit/clear icon
   "folder": {
-    "name": string,
-    "ID": string,
-    "products": [],
+    "FOLDERID": string,
+    "FOLDERNAME": string,
+    "USERID": number
   }
-  folders;
-  //Array of bookmarked items from bookmarks service
-  items;
+  folders: any = [];
   isEditing = false;
   btnCounter = 1;
   private folderDB = new NgxIndexedDB('folders', 1);
@@ -40,11 +37,10 @@ export class FolderAccordionComponent implements OnInit {
     private bookmarksService: BookmarksService,
     private foldersService: FoldersService,
     public dialog: MatDialog, //this is used for the "new folder pop-up"
+    public api: ApiService
   ) {
-    //set items to the array that the service allows us to grab
-    this.items = this.bookmarksService.getBookmarks();
-    //set folders to the array that the service allows us to grab
-    this.folders = this.foldersService.getFolders();
+    
+    
   } //end constructor
 
   edit() {
@@ -56,26 +52,22 @@ export class FolderAccordionComponent implements OnInit {
     }
   }
 
-  delete(clicked_id) {
-    var numFolders = this.folders.length;
-    var folders = this.folders;
-    var theFolder;
-    for (var i = 0; i < numFolders; i++) {
-      if (folders[i].ID === clicked_id) {
-        theFolder = i;
-        i++;
-      }
-    }
-    folders.splice(theFolder, 1);
-    this.foldersService.setFolders(folders);
-    this.folders = this.foldersService.getFolders();
-
-  }
   generateID() {
-    var id = uuid()
+    var id = Math.floor(Math.random() * 6000) + 2  
+
     return id
   }
 
+deleteFolder(folderID){
+  console.log(folderID)
+  this.api.deleteFolder(folderID)
+        .subscribe(res => {
+          this.getFolders();
+        }, (err) => {
+          console.log(err);
+        });
+        this.getFolders();
+}
 
   openDialog(): void {
     //gets rid of the focus on add folder button
@@ -91,59 +83,25 @@ export class FolderAccordionComponent implements OnInit {
         return;
       }
       console.log(this.folders);
-      this.folder = { name: result, ID: this.generateID(), products: [] }
-
-
-      //requirements for folder 
-      this.foldersService.addFolder(this.folder)
-      var folder = this.folder
-      let fdb = new NgxIndexedDB('idxDB', 1);
-      fdb.openDatabase(1, evt => {
-        let objectStore = evt.currentTarget.result.createObjectStore('folders', { keyPath: 'id', autoIncrement: true });
-
-        objectStore.createIndex('name', 'name', { unique: false });
-        objectStore.createIndex('UUID', 'UUID', { unique: true });
-        objectStore.createIndex('products', 'products', { unique: false });
-
-      }).then(function () {
-        fdb.add('folders', { name: folder.name, UUID: folder.ID, products: folder.products }).then(
-          () => {
-            // Do something after the value was added
-            
-          },
-          error => {
-            console.log(error);
-          }
-        );
-      });
+      // this.folder = { FOLDERID: this.generateID(), FOLDERNAME: result, USERID: 12345678 }
+      this.api.addFolder(this.generateID(), result).subscribe((result) => {this.getFolders() });
+      
     });
   } //end export class
 
   ngOnInit() {
-
-    let fdb = new NgxIndexedDB('idxDB', 1);
-    fdb.openDatabase(1, evt => {
-        let objectStore = evt.currentTarget.result.createObjectStore('folders', { keyPath: 'id', autoIncrement: true });
-
-        objectStore.createIndex('name', 'name', { unique: false });
-        objectStore.createIndex('UUID', 'UUID', { unique: true });
-        objectStore.createIndex('products', 'products', { unique: false });
-
-      }).then(function () {
-        fdb.getByKey('folders', 1).then(
-          folder => {
-            console.log(folder)
-          },
-          error => {
-            console.log(error)
-          }
-        );
-      });
-   
-
+    this.getFolders();
   }
 
-
+  getFolders() {
+    this.folders = [];
+      this.api.getFolders().subscribe((data: {}) => {
+        console.log(data);
+        this.folders = data["recordset"];
+        console.log(this.folders)
+        return this.folders;
+      });
+  }
 
 
 

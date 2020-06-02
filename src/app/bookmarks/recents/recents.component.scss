@@ -3,33 +3,41 @@
     src: url(../../../assets/fonts/MetricHPE-Web-Light.woff) format("woff"),
     url(../../../assets/fonts/MetricHPE-Web-Light.eot) format("eot"),
   }
+  .recents-container{
+    overflow-x: scroll !important;
+    overflow-y: hidden !important;
+    white-space: nowrap !important;
+    height: 134px !important;
+    width: 97vw !important;
+    background-color: rgba(196, 196, 196, 0.04) !important; 
+    // opacity: 4% !important;
+  }
   .recents-title{
     color: white;
   font-family: 'HPE-Light';
   font-size: 36px;
   }
   
-  .recents-container{
-    overflow-x: scroll;
-    overflow-y: hidden;
-    white-space: nowrap;
-    height: 134px;
-    width: 97vw;
-    background-color: rgba(196, 196, 196, 0.04); 
-    opacity: 4%;
+ 
+  .clear{
+    font-size: medium;
+    margin: 17px 15px 0px 20px;
+    // display: inline;
+    color: #ffffffd1;
+    float: right;
   }
-  
   .recents-item{
-    white-space: normal;
-    display: inline-block;
-    height: 114.32px;
-    width: 100px;
-    margin: 6px 2px 6px 0px;
-    background-color: #425563;
-    border-radius: 5px;
-    color: white;
-    padding: 5px;
-    font-family: 'HPE-Light';
-    overflow-y: hidden;
+    white-space: normal !important;
+    display: inline-block !important;
+    height: 114.32px !important;
+    width: 100px !important;
+    margin: 6px 2px 6px 0px !important;
+    background-color: rgba(255, 255, 255, 0.219) !important;
+    border-radius: 5px !important;
+    color: white !important;
+    padding: 5px !important;
+    font-family: 'HPE-Light'!important;
+    overflow-y: hidden !important;
+    font-size: large;
   }
   

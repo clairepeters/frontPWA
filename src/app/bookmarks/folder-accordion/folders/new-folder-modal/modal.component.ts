@@ -2,10 +2,10 @@ import { Component, OnInit, Inject } from '@angular/core';
 import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material';
 import { FoldersService } from '../folders.service'
 import{DialogData} from './DialogData'
-export interface DialogData {
-  animal: string;
-  name: string;
-}
+// export interface DialogData {
+//   animal: string;
+//   name: string;
+// }
 @Component({
   selector: 'app-modal',
   templateUrl: './modal.component.html',

@@ -1,6 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-import { BookmarksService } from '../bmk-accordion/bmk-service/bookmarks.service';
+import { BookmarksService } from '../bmk-accordion/recent-service/recent.service';
 import { ActivatedRoute } from '@angular/router';
+import {ApiService} from '../../api-service.service';
+
+
 @Component({
   selector: 'app-recents',
   templateUrl: './recents.component.html',
@@ -8,21 +11,28 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class RecentsComponent implements OnInit {
 
-  folders;
+  
   //Array of bookmarked items from bookmarks service
   items;
+  
 
 
   constructor(
     private route: ActivatedRoute,
     private bookmarksService: BookmarksService,
+    public api: ApiService
   ) {
-    //set items to the array that the service allows us to grab
-    this.items = this.bookmarksService.getBookmarks();
-  } //end constructor
+    
+  } 
 
 
   ngOnInit() {
+    // this.bookmarks = this.getBookmarks();
+    this.items = this.bookmarksService.getRecents();
   }
 
+  clear(){
+    this.bookmarksService.clearRecents();
+    this.items = this.bookmarksService.getRecents();
+  }
 }

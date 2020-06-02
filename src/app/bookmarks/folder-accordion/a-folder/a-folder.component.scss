@@ -1,6 +1,36 @@
 //folders 
 .title{
+    display: inline-block;
     color: black;
     font-size: 20px;
-    
 }
+.add{
+    display: inline-block;
+}
+table.mat-table {
+    border-spacing: 0;
+    width: 100%;
+}
+.mat-row {
+    height: auto;
+  }
+  
+  .mat-cell {
+    font-size: medium;
+    padding: 15px 15px 15px 0;
+    margin: 5px;
+    border-bottom-color: #b0b7b570;
+  }
+
+  .icon_cell{
+    text-align: right;
+  }
+  .mat-elevation-z8 {
+    box-shadow: none !important; 
+}
+  .mat-header-cell {
+    display: none;
+  }
+  .mat-header-row{
+    display: none;
+  }

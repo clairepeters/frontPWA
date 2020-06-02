@@ -9,6 +9,13 @@
     padding: 10px;
     border-radius: 20px 20px 0px 0px;
   }
+  mat-panel-title{
+    font-size: large;
+    color: black;
+  }
+  .removeFolder{
+    display: inline-block;
+  }
   .folder{
     white-space: normal;
     display: inline-block;

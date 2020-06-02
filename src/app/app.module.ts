@@ -13,7 +13,6 @@ import { BookmarksComponent } from './bookmarks/bookmarks.component';
 import { TopbarComponent } from './topbar/topbar.component';
 import { DocumentsListComponent } from './browse/documents-list/documents-list.component';
 import { DocumentDetailsComponent } from './browse/documents-list/document-details/document-details.component';
-import { MoreDataComponent } from './more-data/more-data.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { MaterialModule } from './material.module';
@@ -24,6 +23,7 @@ import { RecentsComponent } from './bookmarks/recents/recents.component';
 import { BmkAccordionComponent } from './bookmarks/bmk-accordion/bmk-accordion.component';
 import { FolderAccordionComponent } from './bookmarks/folder-accordion/folder-accordion.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+
 @NgModule({
   imports: [
     BrowserModule,
@@ -33,7 +33,6 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
       { path: 'DOC_DATA/:id', component: DocumentDetailsComponent },
       { path: 'folder/:ID', component: AFolderComponent },
       { path: 'Documents', component: DocumentsListComponent },
-      { path: 'more-data', component: MoreDataComponent },
       { path: '', redirectTo: '/Bookmark', pathMatch: 'full'
   }
 
@@ -51,7 +50,6 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
     TopbarComponent,
     DocumentsListComponent,
     DocumentDetailsComponent,
-    MoreDataComponent,
     ModalComponent,
     AFolderComponent,
     SearchComponent,

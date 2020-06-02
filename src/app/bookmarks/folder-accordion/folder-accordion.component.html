@@ -21,9 +21,14 @@
     <button mat-icon-button id="btn" matTooltip="Add Folder" (click)="openDialog()">
         <mat-icon>add</mat-icon>
     </button>
-    <button mat-icon-button matTooltip="edit" (click)="edit()">
+    
+    <!-- <button mat-icon-button matTooltip="edit" (click)="edit()">
         edit
-    </button>
+    </button> -->
+
+    <div class="removeFolder" (click)="flag=!flag"><i class="editicon"  *ngIf="flag" (click)=edit()>edit</i>
+        <i  class="closeicon" *ngIf="!flag" (click)=edit()>done</i>
+      </div>
     <!-- [ng-attr-matBadge]="isEditing" matBadgePosition="before" matBadgeColor="accent" -->
 
     <mat-divider></mat-divider>
@@ -36,10 +41,10 @@
         <div id="folder"
             class="{{isEditing ? 'editing center mat-button ng-star-inserted': 'notEditing center mat-button ng-star-inserted'}}"
             *ngFor="let folder of folders">
-            <div class="{{isEditing ? ' click badge ': ' click noBadge'}}" id="{{folder.ID}}"
-                (click)="delete(folder.ID)">
+            <div class="{{isEditing ? ' click badge ': ' click noBadge'}}" id="{{folder.FOLDERID}}"
+                (click)="deleteFolder(folder.FOLDERID)">
                 -</div>
-            <div class="folder" [routerLink]="['/folder',  folder.ID ]">{{folder["name"]}}</div>
+            <div class="folder" [routerLink]="['/folder',  folder.FOLDERID ]">{{folder.FOLDERNAME}}</div>
 
         </div>
 

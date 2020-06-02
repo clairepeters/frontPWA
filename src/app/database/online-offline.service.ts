@@ -6,6 +6,7 @@ declare const window: any;
   providedIn: 'root'
 })
 export class OnlineOfflineService {
+// this is code to create a local database, but it is not currently being used 
 
   private internalConnectionChanged = new Subject<boolean>();
 
