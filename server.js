@@ -101,15 +101,59 @@ app.get('/Documents', function (req, res) {
     });
 })
 
+app.get('/Documents/:id', function (req, res) {
+    sql.connect(sqlConfig, function() {
+        var request = new sql.Request();
+        var stringRequest = 'select * from APP.DOCUMENT where DOCUMENTID = \'' + req.params.id + '\';';
+        request.query(stringRequest, function(err, recordset) {
+            if(err) console.log(err);
+            res.end(JSON.stringify(recordset)); // Result in JSON format
+        });
+    });
+})
+
 //POST API
-app.post("/bookmark", function(req , res){
-    var query = 'INSERT INTO app.BOOKMARK values (12345678, NULL, \'DOC03\');';
+app.post("/Bookmark/:docIDs", function(req , res){
+    var query = 'INSERT INTO app.BOOKMARK values (12345678, NULL, \'' + req.params.docIDs + '\');';
+    console.log(query);
     executeQuery (res, query);
 });
 
-app.delete("/bookmark", function(req, res){
-    var query = 'DELETE FROM app.BOOKMARK WHERE USERID = 12345678 AND DOCUMENTID = \'DOC03\';';
+app.delete("/bookmark/:docIDs", function(req, res){
+    var query = 'DELETE FROM app.BOOKMARK WHERE USERID = 12345678 AND DOCUMENTID = \''+ req.params.docIDs + '\';';
     
+    executeQuery(res, query);
+});
+
+app.get('/folders', function (req, res) {
+    sql.connect(sqlConfig, function() {
+        var request = new sql.Request();
+        request.query('SELECT * from app.folder where USERID = 12345678 ', function(err, recordset) {
+            if(err) console.log(err);
+            res.end(JSON.stringify(recordset)); // Result in JSON format
+        });
+    });
+})
+
+app.get('/folders/:ID', function (req, res) {
+    sql.connect(sqlConfig, function() {
+        var request = new sql.Request();
+        var stringRequest = 'select * from APP.FOLDER where FOLDERID = ' + req.params.ID + ';';
+        request.query(stringRequest, function(err, recordset) {
+            if(err) console.log(err);
+            res.end(JSON.stringify(recordset)); // Result in JSON format
+        });
+    });
+})
+
+app.post("/folders/:folderIDs/:folderName", function(req , res){
+    var query = 'INSERT INTO app.FOLDER values ('+ req.params.folderIDs + ', \'' + req.params.folderName + '\',  12345678);';
+    executeQuery (res, query);
+});
+
+app.delete("/folders/:folderIDs", function(req, res){
+    var query = 'DELETE FROM app.FOLDER WHERE USERID = 12345678 AND FOLDERID = '+ req.params.folderIDs + ';';
+    console.log(query);
     executeQuery(res, query);
 });
 
