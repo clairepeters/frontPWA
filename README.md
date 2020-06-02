@@ -2,10 +2,16 @@
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.0.4.
 
-## Development server
-
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
 
+## server
+
+Run `node server.js` in the correct directory to start the server. The server needs to be in a directory outside of the project. It is only in here to keep it all together. 
+
+## MSSQL Database
+
+this application uses a microsoft SQL database backend to pull mock data and demonstrate how a REST API and a database would connect to angular
+. 
 ## Code scaffolding
 
 Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
