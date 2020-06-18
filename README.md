@@ -13,6 +13,8 @@ Run `node server.js` in the correct directory to start the server. The server ne
 this application uses a microsoft SQL database backend to pull mock data and demonstrate how a REST API and a database would connect to angular. 
 
 To create the same database used by the REST API: instal MSSQL and Microsoft SQL Server management studio. Then run the HPE-PWA-Script to create the database. Beware of referential integrity constraints when entering data (make sure category Id's, Doc Id's and user Id's are in their respective tables before adding a document and a bookmark)
+
+!!!!ALSO MAKE SURE YOU HAVE A USER ID OF 12345678 BECAUSE THIS IS HARDCODED INTO THE API SINCE THERE IS NO LOGIN FEATURE!!!!
 . 
 ## Code scaffolding
 
